@@ -196,6 +196,7 @@ def analyze_dialogue(client: OpenAI, dialogue_text: str, criteria: List[str]) ->
     raise RuntimeError(f"Analysis failed for all models. Last error: {last_err}")
 
 @app.get("/")
+@app.head("/")
 async def root():
     return {"status": "ok", "message": "Call Analyzer API is running"}
 
